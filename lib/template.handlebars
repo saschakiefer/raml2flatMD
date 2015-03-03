@@ -1,55 +1,37 @@
-h1. {{{title}}} {{#if version}} version {{version}}{{/if}}
-
-{toc:printable=true|style=square|minLevel=2|maxLevel=2|type=list|outline=false|include=.*}
-
-\\
-----
-
-*Base Uri:* {{{wikisafe baseUri}}}
-
+{{!-- # {{{title}}} {{#if version}} version {{version}}{{/if}} 
+**Base Uri:** {{baseUri}}
 {{#if baseUriParameters}}
-h4. Base Uri Parameters
+### Base Uri Parameters
 
-|| Param Name || Type || Required || Example || Default || Description ||
+|Param Name|Type|Required|Example|Default|Description|
+|----------|:--:|:------:|-------|-------|-----------|
 {{#each baseUriParameters}}
-| {{{@key}}} | {{{Type}}} | {{{emote required}}} | {{{example}}} | {{{default}}} | {{{description}}} |
+| {{{@key}}} | {{{type}}} | {{{emote required}}} | {{#if example}}``{{{example}}}``{{/if}} | {{#if default}}``{{{default}}}``{{/if}} | {{{description}}} |
 {{/each}}
-
-\\
-----
 {{/if}}
-
-
+--}}
 {{#documentation}}
-h3. {{{title}}}
+## {{{title}}}
 {{{content}}}
 {{/documentation}}
 
-
-
 {{#resources}}
-h2. {{#if displayName}}{{{wikisafe displayName}}}{{/if}}{{#unless displayName}}{{{wikisafe relativeUri}}}{{/unless}}
-
-{{#if description}}
-Description: {{description}}
-{{/if}}
-
+# {{#if displayName}}{{displayName}}{{/if}}{{#unless displayName}}{{relativeUri}}{{/unless}}
+{{#if description}}{{description}}{{/if}}
 {{#if uriParameters}}
-h3. Uri Parameters
+#### Key Fields
 
-|| Param Name || Type || Required || Example || Default || Description ||
+|Param Name|Type|Example|Description|
+|----------|:--:|-------|-----------|
 {{#each uriParameters}}
-| {{{@key}}} | {{{Type}}} | {{{emote required}}} | {{{example}}} | {{{default}}} | {{{description}}} |
+| {{{@key}}} | {{{type}}} | {{#if example}}``{{{example}}}``{{/if}} | {{{description}}} |
 {{/each}}
-
 {{/if}}
-
-
-
 
 {{> resource}}
-\\
-----
+
+{{#unless @last}}-------------{{/unless}}
+
 {{/resources}}
 
 

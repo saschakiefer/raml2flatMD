@@ -1,34 +1,34 @@
 {
-  "name": "raml2wiki",
-  "version": "0.1.2",
-  "description": "RAML to Wiki format documentation generator",
-  "main": "lib/raml2wiki.js",
-  "scripts": {
-    "test": "mocha -R nyan"
-  },
-  "bin": {
-    "raml2wiki": "lib/raml2wiki.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/jhitchcock/raml2wiki.git"
-  },
-  "keywords": [
-    "raml"
-  ],
-  "author": "James Hitchcock <james@jhitchcock.com> (http://jhitchcock.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/jhitchcock/raml2wiki/issues"
-  },
-  "homepage": "https://github.com/jhitchcock/raml2wiki",
-  "devDependencies": {
-    "chai": "^1.9.2",
-    "mocha": "^2.0.1"
-  },
-  "dependencies": {
-    "commander": "^2.5.0",
-    "handlebars": "^2.0.0",
-    "raml2obj": "^0.3.0"
-  }
+	"name": "raml2flatMD",
+	"version": "0.1.2",
+	"description": "RAML to MD format documentation generator (one flat page)",
+	"main": "lib/raml2wiki.js",
+	"scripts": {
+		"test": "mocha -R nyan"
+	},
+	"bin": {
+		"raml2wiki": "lib/raml2wiki.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/saschakiefer/raml2flatMD"
+	},
+	"keywords": [
+		"raml"
+	],
+	"author": "Sascha Kiefer <mail@sascha-kiefer.de>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/saschakiefer/raml2flatMD/issues"
+	},
+	"homepage": "https://github.com/saschakiefer/raml2flatMD",
+	"devDependencies": {
+		"chai": "^1.9.2",
+		"mocha": "^2.0.1"
+	},
+	"dependencies": {
+		"commander": "^2.5.0",
+		"handlebars": "^2.0.0",
+		"raml2obj": "^0.3.0"
+	}
 }

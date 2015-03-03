@@ -1,44 +1,48 @@
-h3. {{wikisafe parentUrl}}{{wikisafe relativeUri}}
+## {{parentUrl}}{{ relativeUri}}
+{{!-- {{context}} --}}
+{{#unless resources}}{{#if description}}{{description}}{{/if}}{{/unless}}
 {{#methods}}
-h4.  {{method}} {{#if description}} : {{description}}{{/if}}
-
-
+### {{method}} 
+{{#if description}}{{description}}{{/if}}
 
 {{#if headers}}
-h5. Request Headers
+#### Request Headers
 
-|| Param Name || Type || Required || Example || Description ||
+|Param Name|Type|Required|Example|Default|Description|
+|----------|:--:|:------:|-------|-------|-----------|
 {{#each headers}}
-| {{{@key}}} |{{{Type}}} | {{{emote required}}} | {{{example}}} | {{{description}}} |
+| {{{@key}}} |{{{type}}} | {{{emote required}}} | {{#if example}}``{{{example}}}``{{/if}} | {{#if default}}``{{{default}}}``{{/if}} | {{{description}}} |
 {{/each}}
 
 {{/if}}
 
 
 {{#if queryParameters}}
-h5. Query Parameters
+#### Properties
 
-|| Param Name || Type || Required || Example || Default || Description ||
+|Param Name|Type|Key|Required|Collection|Example|Default|Description|
+|----------|:--:|:-:|:------:|:--------:|-------|-------|-----------|
 {{#each queryParameters}}
-| {{{@key}}} |{{{Type}}} | {{{emote required}}} | {{{example}}} | {{{default}}} | {{{description}}} |
+| {{{parseParamName @key}}} | {{{$type}}} | {{{emote $isKey}}} | {{{emote required}}} | {{{emote repeat}}} | {{#if example}}```{{{example}}}```{{/if}} | {{#if default}}``{{{default}}}``{{/if}} | {{{description}}} |
 {{/each}}
 
 {{/if}}
 
 {{#if body}}
 
-h5. Body
+#### Body
 
 {{#each body}}
 
-h6. {{@key}}
+##### {{@key}}
 
 {{#if formParameters}}
-h6. Form Parameters
+##### Form Parameters
 
-|| Param Name || Type || Required || Example || Default || Description ||
+|Param Name|Type|Required|Example|Default|Description|
+|----------|:--:|:------:|-------|-------|-----------|
 {{#each formParameters}}
-| {{{@key}}} |{{{Type}}} | {{{emote required}}} | {{{example}}} | {{{default}}} | {{{description}}} |
+| {{{@key}}} |{{{type}}} | {{{emote required}}} | {{#if example}}``{{{example}}}``{{/if}} |{{#if default}}``{{{default}}}``{{/if}} | {{{description}}} |
 {{/each}}
 
 {{/if}}
@@ -47,10 +51,10 @@ h6. Form Parameters
 
 {{#if responses}}
 
-h5. Responses
+#### Responses
 
    {{#each responses}}
-     h6. {{@key}} {{#if this.description}} - {{this.description}}{{/if}}
+     ###### {{@key}} {{#if this.description}} - {{this.description}}{{/if}}
 
          {{#if this.headers}}
                                                
@@ -86,14 +90,7 @@ h5. Responses
                                     
     {{/if}}
 
-
-
-
-
-
-
 {{/methods}}
-
 
 
 {{#resources}}

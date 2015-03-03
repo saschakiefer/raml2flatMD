@@ -29,3 +29,4 @@ node_modules
 lib/*.json
 lib/*.raml
 lib/test.txt
+lib/raml2md.sh
